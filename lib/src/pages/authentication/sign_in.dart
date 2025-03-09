@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fnf_womentorship/configs/themes/app_light_theme.dart';
+import 'package:fnf_womentorship/src/pages/authentication/forgot_password.dart';
+import 'package:fnf_womentorship/src/pages/authentication/register.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignIn extends StatelessWidget {
@@ -198,7 +200,7 @@ class SignIn extends StatelessWidget {
           TextSpan(
             text: 'IN',
             style: TextStyle(
-              color: Color(0xFFFE9879),
+              color: Colors.pink,
               fontWeight: FontWeight.w800,
             ),
           ),
@@ -362,14 +364,19 @@ class SignIn extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          Text(
-            'Forgot password?',
-            style: GoogleFonts.inter(
-              fontSize: 13.0,
-              color: const Color(0xFF004AA1),
-              fontWeight: FontWeight.w500,
+          InkWell(
+            onTap: () {
+              Get.toNamed(ForgotPassword.routeName);
+            },
+            child: Text(
+              'Forgot password?',
+              style: GoogleFonts.inter(
+                fontSize: 13.0,
+                color: const Color(0xFF004AA1),
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.right,
             ),
-            textAlign: TextAlign.right,
           ),
         ],
       ),
@@ -532,29 +539,34 @@ class SignIn extends StatelessWidget {
   Widget buildFooter(Size size) {
     return Padding(
       padding: EdgeInsets.only(top: size.height * 0.03),
-      child: Text.rich(
-        TextSpan(
-          style: GoogleFonts.inter(
-            fontSize: 12.0,
-            color: Colors.black,
+      child: InkWell(
+        onTap: () {
+          Get.toNamed(Register.routeName);
+        },
+        child: Text.rich(
+          TextSpan(
+            style: GoogleFonts.inter(
+              fontSize: 12.0,
+              color: Colors.black,
+            ),
+            children: const [
+              TextSpan(
+                text: 'Don’t have an account? ',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              TextSpan(
+                text: 'Sign Up here',
+                style: TextStyle(
+                  color: Colors.pink,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
           ),
-          children: const [
-            TextSpan(
-              text: 'Don’t have an account? ',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TextSpan(
-              text: 'Sign Up here',
-              style: TextStyle(
-                color: Color(0xFFFF7248),
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       ),
     );
   }

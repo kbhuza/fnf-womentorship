@@ -39,6 +39,14 @@ dependencies:
   google_fonts: ^6.2.1
   get: ^4.7.2
   flutter_native_splash: ^2.4.0
+  intl_phone_field: ^3.2.0
+  image_picker: ^1.1.2
+  intl: ^0.20.2
+  badges: ^3.1.2
+  url_launcher: ^6.3.1
+  cached_network_image: ^3.4.0
+  shimmer: ^3.0.0
+  easy_separator: ^1.0.1
 
 dev_dependencies:
   flutter_test:

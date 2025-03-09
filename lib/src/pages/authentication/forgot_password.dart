@@ -4,17 +4,15 @@ import 'package:fnf_womentorship/configs/themes/app_light_theme.dart';
 import 'package:fnf_womentorship/src/components/custom_auth_text_field.dart';
 import 'package:fnf_womentorship/src/components/loading_button.dart';
 import 'package:fnf_womentorship/src/pages/authentication/sign_in.dart';
-import 'package:fnf_womentorship/src/pages/profile/user_selection.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Register extends StatelessWidget {
-   Register({super.key});
+class ForgotPassword extends StatelessWidget {
+   ForgotPassword({super.key});
 
-  static const String routeName = "/register";
+  static const String routeName = "/forgot-password";
 
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passController = TextEditingController();
 
     var isLoading = false.obs;
 
@@ -25,6 +23,7 @@ class Register extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFFF8F8F8),
+      appBar: AppBar(backgroundColor: Colors.transparent, leading: IconButton(icon: const Icon(Icons.arrow_back), onPressed: () { Get.back(); },), ),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -44,7 +43,7 @@ class Register extends StatelessWidget {
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       width: size.width * 0.9,
-      height: size.height * 0.8,
+      height: size.height * 0.5,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         color: Colors.white,
@@ -55,29 +54,22 @@ class Register extends StatelessWidget {
         children: [
           //logo & login text here
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                logo(size.height / 8, size.height / 8),
-                SizedBox(
-                  height: size.height * 0.02,
-                ),
-                ColoredBox(color: Colors.pink,
-                child: Text(' WOMENTORSHIP ', style: GoogleFonts.inter(
-          fontSize: 22,
-          color: Colors.white,
-          fontWeight: FontWeight.w600,
-          letterSpacing: 2.000000061035156,
-        ),),
-                ),
+                logo(size.height / 6, size.height / 6),
+                // SizedBox(
+                //   height: size.height * 0.02,
+                // ),
+
               ],
             ),
           ),
 
           //email , password textField and rememberForget text here
           Expanded(
-            flex: 5,
+            flex: 2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -90,42 +82,6 @@ class Register extends StatelessWidget {
                   ],
                 ),
                 CustomAuthTextField(controller: emailController, hintText: "Enter your email", icon: Icons.email_outlined, secondaryColor: secondaryColor,),
-                SizedBox(
-                  height: size.height * 0.02,
-                ),
-                CustomAuthTextField(controller: passController, hintText: "Enter your password", icon: Icons.lock_outline, secondaryColor: secondaryColor, obscureText: true,),
-                SizedBox(
-                  height: size.height * 0.02,
-                ),
-                CustomAuthTextField(controller: passController, hintText: "Confirm your password", icon: Icons.lock_outline, secondaryColor: secondaryColor, obscureText: true,),
-                SizedBox(
-                  height: size.height * 0.01,
-                ),
-
-                  Text.rich(
-                              TextSpan(
-                                style: GoogleFonts.inter(
-                  fontSize: 12.0,
-                  color: Colors.black,
-                                ),
-                                children: const [
-                  TextSpan(
-                    text: 'By registering, you agree to our',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' Terms and Conditions',
-                    style: TextStyle(
-                      color: Colors.pink,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                                ],
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
               ],
             ),
           ),
@@ -136,9 +92,17 @@ class Register extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LoadingButton(text: 'Register', size: size, isLoading: isLoading, onPressed: () {
-                            Get.offAllNamed(UserSelectionScreen.routeName);
-                }, ),
+                //sign in button here
+                // signInButton(size),
+                LoadingButton(text: 'Forgot Password', size: size, isLoading: isLoading, onPressed: () {}, ),
+                
+                //don't have account text here
+                // SizedBox(
+                //   height: size.height * 0.02,
+                // ),
+
+                //sign in with google & facebook button here
+                // google_facebookButton(size),
               ],
             ),
           ),
@@ -147,10 +111,51 @@ class Register extends StatelessWidget {
     );
   }
 
+  Widget welcomeText() {
+    return Center(
+      child: Text.rich(
+        TextSpan(
+          style: GoogleFonts.inter(
+            fontSize: 22.0,
+            color: Colors.black,
+            height: 1.59,
+          ),
+          children: const [
+            TextSpan(
+              text: 'Welcome Back',
+            ),
+            TextSpan(
+              text: ', ',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            TextSpan(
+              text: 'Login',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            TextSpan(
+              text: ' ',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            TextSpan(
+              text: 'for Continue !',
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
 
   Widget logo(double height_, double width_) {
     return SvgPicture.asset(
-      'assets/svgs/fnf_plain_logo.svg',
+      'assets/svgs/forgot_password.svg',
       height: height_,
       width: width_,
     );
@@ -166,13 +171,13 @@ class Register extends StatelessWidget {
         ),
         children: const [
           TextSpan(
-            text: 'SELF',
+            text: 'FORGOT',
             style: TextStyle(
               fontWeight: FontWeight.w800,
             ),
           ),
           TextSpan(
-            text: 'REGISTER',
+            text: 'PASSWORD',
             style: TextStyle(
               color: Colors.pink,
               fontWeight: FontWeight.w800,
@@ -199,13 +204,13 @@ class Register extends StatelessWidget {
             ),
             children: const [
               TextSpan(
-                text: 'Already have an account? ',
+                text: 'You will recieve an email from us ',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                 ),
               ),
               TextSpan(
-                text: 'Sign In here',
+                text: '\n Didn`t get email',
                 style: TextStyle(
                   color: Colors.pink,
                   fontWeight: FontWeight.w500,

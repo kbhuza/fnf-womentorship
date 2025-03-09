@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fnf_womentorship/configs/themes/sub_theme_data_mixin.dart';
 
-const Color primaryLightColorLight = Color(0xFF3ac3cb);
+const Color primaryLightColorLight = Colors.pink;
 const Color primaryColorLight = Color(0xFF8ED3E5);
 const Color primaryColorDark =  Color(0xFF21899C);
 const Color secondaryColor = Color(0xFF004AA1);
