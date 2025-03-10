@@ -4,7 +4,7 @@ import 'package:fnf_womentorship/configs/themes/sub_theme_data_mixin.dart';
 const Color primaryLightColorLight = Colors.pink;
 const Color primaryColorLight = Color(0xFF8ED3E5);
 const Color primaryColorDark =  Color(0xFF21899C);
-const Color secondaryColor = Color(0xFF184FAF);
+const Color secondaryColor = Color(0xFF004AA1);
 const Color mainTextColor = Color.fromARGB(255, 40, 40, 40);
 
 class LightTheme with SubThemeData{
