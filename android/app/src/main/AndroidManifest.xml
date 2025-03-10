@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< HEAD
 
     <!-- Adding permissions here -->
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -7,6 +8,11 @@
         android:label="fnf_womentorship"
         android:name="${applicationName}"
         android:enableOnBackInvokedCallback="true"
+=======
+    <application
+        android:label="fnf_womentorship"
+        android:name="${applicationName}"
+>>>>>>> 996fd110082fc311cfb976b752fc1096bfe45600
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
