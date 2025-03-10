@@ -47,6 +47,7 @@ dependencies:
   cached_network_image: ^3.4.0
   shimmer: ^3.0.0
   easy_separator: ^1.0.1
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fnf_womentorship/configs/themes/app_light_theme.dart';
-import 'package:fnf_womentorship/src/components/circular_loader.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -16,7 +14,7 @@ class SplashScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFFFFFFFF), Color(0xFF004AA1)],
+                colors: [Color(0xFF1E3C72), Color(0xFF2A5298)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -30,13 +28,13 @@ class SplashScreen extends StatelessWidget {
                          children: [
                            const Spacer(),
                            SvgPicture.asset(
-                'assets/svgs/fnf_plain_logo.svg',
+                'assets/images/logo.svg',
                 width: 200, 
                 height: 200,
                            ),
                            const SizedBox(height: 20),
                            Text(
-                "Friedrich Naumann Foundation",
+                "Drug Awareness\nApplication",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.white,
@@ -44,33 +42,18 @@ class SplashScreen extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
                            ),
-                           const SizedBox(height: 10),
-                //            SvgPicture.asset(
-                // 'assets/svgs/WOMENTORSHIP.svg',
-                // width: 50, 
-                // height: 30,
-                //            ),
-                ColoredBox(color: Colors.pink,
-                child: Text(' WOMENTORSHIP ', style: GoogleFonts.inter(
-          fontSize: 22,
-          color: Colors.white,
-          fontWeight: FontWeight.w600,
-          letterSpacing: 2.000000061035156,
-        ),),
-                ),
                            const Spacer(),
-                          //  const RotatingLoader(),
-                          SvgPicture.asset(
-                            'assets/svgs/loader.svg',
-                            width: 40,
-                            height: 40,
-                          ),
+                           SvgPicture.asset(
+                'assets/images/loader.svg',
+                width: 40, 
+                height: 40,
+                           ),
                            const SizedBox(height: 20),
                            Text(
-                "Version 0.0.1",
+                "NUST FYP",
                 style: GoogleFonts.poppins(
                   color: Colors.white,
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
                            ),
