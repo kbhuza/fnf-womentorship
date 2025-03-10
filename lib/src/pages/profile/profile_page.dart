@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fnf_womentorship/controllers/profile_controller.dart';
 import 'package:fnf_womentorship/src/components/loading_button.dart';
+import 'package:fnf_womentorship/src/pages/home/mentee_dashboard.dart';
+import 'package:fnf_womentorship/src/pages/profile/qualifications_page.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -330,7 +332,10 @@ class SubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: LoadingButton(
-        onPressed: controller.submitForm,
+        onPressed:() {
+          controller.submitForm; 
+          Get.toNamed(QualificationsPage.routeName);
+          },
         text: 'Save Profile', 
         isLoading: controller.isLoading,
         size: MediaQuery.of(context).size,

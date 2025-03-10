@@ -1,7 +1,9 @@
 import 'package:fnf_womentorship/src/pages/authentication/forgot_password.dart';
 import 'package:fnf_womentorship/src/pages/authentication/register.dart';
 import 'package:fnf_womentorship/src/pages/authentication/sign_in.dart';
+import 'package:fnf_womentorship/src/pages/home/mentee_dashboard.dart';
 import 'package:fnf_womentorship/src/pages/profile/profile_page.dart';
+import 'package:fnf_womentorship/src/pages/profile/qualifications_page.dart';
 import 'package:fnf_womentorship/src/pages/profile/user_selection.dart';
 import 'package:fnf_womentorship/src/pages/splashscreen/splash_screen.dart';
 import 'package:fnf_womentorship/src/pages/language/select_language_page.dart';
@@ -17,6 +19,8 @@ class AppRoutes{
         GetPage(name: ForgotPassword.routeName, page: ()=> ForgotPassword()),
         GetPage(name: UserSelectionScreen.routeName, page: ()=> const UserSelectionScreen()),
         GetPage(name: ProfilePage.routeName, page: ()=> ProfilePage()),
+        GetPage(name: QualificationsPage.routeName, page: ()=> QualificationsPage()),
         GetPage(name: SelectLanguagePage.routeName, page: () => SelectLanguagePage()),
+        GetPage(name: MenteeDashboardScreen.routeName, page: () => const MenteeDashboardScreen()),
       ];
 }
